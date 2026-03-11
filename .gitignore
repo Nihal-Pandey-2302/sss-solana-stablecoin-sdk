@@ -10,3 +10,5 @@ test-ledger
 .next/
 target/
 node_modules/
+packages/web-dashboard/.next
+packages/*/dist
