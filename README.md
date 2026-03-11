@@ -6,6 +6,14 @@
 [![Token-2022](https://img.shields.io/badge/Token--2022-native-purple)](https://spl.solana.com/token-2022)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 🌐 Live Demo &nbsp;|&nbsp; 🎥 Demo Video
+
+> **[→ Launch Web Dashboard](https://sss-solana-stablecoin-elhakuovd-nihals-projects-7da31bb2.vercel.app/)** — connect Phantom (Devnet) to interact live
+
+> **[▶️ Watch the 5-minute walkthrough](https://youtu.be/YOUR_VIDEO_ID_HERE)** — SSS-2 blacklist + seizure on Devnet
+
+
+
 > **The open-source SDK and core standards for stablecoins on Solana** — a production-ready, modular toolkit for institutions and builders to deploy USDC/USDT-class compliant stablecoins using Token-2022.
 
 ## 🗺️ What Is This?
@@ -155,7 +163,7 @@ solana balance   # fund from faucet.solana.com if <0.1 SOL
 
 ### Option A — Web Dashboard (Easiest)
 
-> **[→ Launch Dashboard](https://YOUR_VERCEL_URL_HERE)** — no CLI needed.
+> **[→ Launch Dashboard](https://sss-solana-stablecoin-elhakuovd-nihals-projects-7da31bb2.vercel.app/)** — no CLI needed.
 
 1. Open the link and click **Select Wallet** → Phantom → Approve
 2. Set Phantom to **Devnet** (Settings → Developer Settings → Change Network)
