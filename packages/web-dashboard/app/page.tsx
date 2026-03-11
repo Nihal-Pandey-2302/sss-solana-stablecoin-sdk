@@ -129,7 +129,7 @@ export default function DashboardPage() {
       const program = new anchor.Program(SssTokenIdl as any, provider);
       const mintPk = new PublicKey(DEMO_MINT);
       const [statePda] = PublicKey.findProgramAddressSync([Buffer.from("state"), mintPk.toBuffer()], new PublicKey(SSS_PROGRAM));
-      const state = await program.account.stablecoinState.fetch(statePda);
+      const state = await (program.account as any).stablecoinState.fetch(statePda);
       setTokenState(state);
 
       const mintInfo = await getMint(connection, mintPk, "confirmed", TOKEN_2022_PROGRAM_ID);
