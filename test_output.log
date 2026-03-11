@@ -1,0 +1,167 @@
+
+Found a 'test' script in the Anchor.toml. Running it as a test suite!
+
+Running test suite: "/home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/Anchor.toml"
+
+yarn run v1.22.22
+$ /home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/node_modules/.bin/ts-mocha -p ./tsconfig.json -t 1000000 'tests/**/*.ts'
+
+
+  Phase 1: Foundation Sanity Test
+Hook sanity tx: 5XZapSkiDLnpJcKyPDhoD5EWh2mTfbCNNfZZ8HeuzEwzn4rjFHFxM3FWAaauvorG5SMe9jDTLmxkX7N6rvemnbRa
+    ✔ Executes basic sanity check on transfer_hook (289ms)
+Token-2022 Mint Creation tx: 2yDxDyxQrFChvjkBHAcDjycZBwPSmVr54MTaAnVVXyjqsRB28eSumTn4CPGh3FjPQ9JkJMrgbdt4rMRzYRqWypwV
+    ✔ Can create a Token-2022 mint with metadata (405ms)
+
+  Phase 2: SSS-1 Core
+    1) Initializes a new SSS-1 Token and links State PDA
+    2) Minter can mint tokens
+    3) Unauthorized user cannot mint
+    4) Pauser can pause the token
+    5) Minting fails when paused
+    6) Pauser can unpause the token
+    7) Pauser can freeze an account
+    8) Pauser can thaw an account
+    9) User can burn their own tokens with Burner's authorization
+    10) Master can update roles
+
+
+  2 passing (3s)
+  10 failing
+
+  1) Phase 2: SSS-1 Core
+       Initializes a new SSS-1 Token and links State PDA:
+     Error: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 2: invalid account data for instruction. 
+Logs: 
+[
+  "Program 11111111111111111111111111111111 success",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [1]",
+  "Program log: MetadataPointerInstruction::Initialize",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 846 of 999850 compute units",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [1]",
+  "Program log: Instruction: InitializeMint",
+  "Program log: Error: InvalidAccountData",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 2038 of 999004 compute units",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb failed: invalid account data for instruction"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+      at Connection.sendEncodedTransaction (node_modules/@solana/web3.js/src/connection.ts:6053:13)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at Connection.sendRawTransaction (node_modules/@solana/web3.js/src/connection.ts:6009:20)
+      at Connection.sendTransaction (node_modules/@solana/web3.js/src/connection.ts:5997:12)
+      at sendAndConfirmTransaction (node_modules/@solana/web3.js/src/utils/send-and-confirm-transaction.ts:36:21)
+
+  2) Phase 2: SSS-1 Core
+       Minter can mint tokens:
+     Error: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x2. 
+Logs: 
+[
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [1]",
+  "Program log: Create",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+  "Program log: Instruction: GetAccountDataSize",
+  "Program log: Error: Invalid Mint",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 632 of 194643 compute units",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb failed: custom program error: 0x2",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 5989 of 200000 compute units",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: custom program error: 0x2"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+      at Connection.sendEncodedTransaction (node_modules/@solana/web3.js/src/connection.ts:6053:13)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at Connection.sendRawTransaction (node_modules/@solana/web3.js/src/connection.ts:6009:20)
+      at Connection.sendTransaction (node_modules/@solana/web3.js/src/connection.ts:5997:12)
+      at sendAndConfirmTransaction (node_modules/@solana/web3.js/src/utils/send-and-confirm-transaction.ts:36:21)
+
+  3) Phase 2: SSS-1 Core
+       Unauthorized user cannot mint:
+     AssertionError: expected 'AnchorError caused by account: state.…' to include 'UnauthorizedMinter'
+      at /home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/tests/sss-1.spec.ts:201:30
+      at Generator.throw (<anonymous>)
+      at rejected (tests/sss-1.spec.ts:39:65)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  4) Phase 2: SSS-1 Core
+       Pauser can pause the token:
+     Error: Account `mint` not provided.
+      at /home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/node_modules/@coral-xyz/anchor/src/program/common.ts:51:15
+      at Array.forEach (<anonymous>)
+      at validateAccounts (node_modules/@coral-xyz/anchor/src/program/common.ts:46:14)
+      at ix (node_modules/@coral-xyz/anchor/src/program/namespace/instruction.ts:44:23)
+      at txFn (node_modules/@coral-xyz/anchor/src/program/namespace/transaction.ts:24:14)
+      at MethodsBuilder.rpc [as _rpcFn] (node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:21:18)
+      at MethodsBuilder.rpc (node_modules/@coral-xyz/anchor/src/program/namespace/methods.ts:434:17)
+
+  5) Phase 2: SSS-1 Core
+       Minting fails when paused:
+     AssertionError: expected 'AnchorError caused by account: state.…' to include 'TokenPaused'
+      at /home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/tests/sss-1.spec.ts:233:30
+      at Generator.throw (<anonymous>)
+      at rejected (tests/sss-1.spec.ts:39:65)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  6) Phase 2: SSS-1 Core
+       Pauser can unpause the token:
+     Error: Account `mint` not provided.
+      at /home/nihal/Projects/solana-sc-sdk/solana-stablecoin-standard/node_modules/@coral-xyz/anchor/src/program/common.ts:51:15
+      at Array.forEach (<anonymous>)
+      at validateAccounts (node_modules/@coral-xyz/anchor/src/program/common.ts:46:14)
+      at ix (node_modules/@coral-xyz/anchor/src/program/namespace/instruction.ts:44:23)
+      at txFn (node_modules/@coral-xyz/anchor/src/program/namespace/transaction.ts:24:14)
+      at MethodsBuilder.rpc [as _rpcFn] (node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:21:18)
+      at MethodsBuilder.rpc (node_modules/@coral-xyz/anchor/src/program/namespace/methods.ts:434:17)
+
+  7) Phase 2: SSS-1 Core
+       Pauser can freeze an account:
+     Error: AnchorError caused by account: state. Error Code: AccountNotInitialized. Error Number: 3012. Error Message: The program expected this account to be already initialized.
+      at AnchorError.parse (node_modules/@coral-xyz/anchor/src/error.ts:168:14)
+      at translateError (node_modules/@coral-xyz/anchor/src/error.ts:277:35)
+      at MethodsBuilder.rpc [as _rpcFn] (node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:35:29)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  8) Phase 2: SSS-1 Core
+       Pauser can thaw an account:
+     Error: AnchorError caused by account: state. Error Code: AccountNotInitialized. Error Number: 3012. Error Message: The program expected this account to be already initialized.
+      at AnchorError.parse (node_modules/@coral-xyz/anchor/src/error.ts:168:14)
+      at translateError (node_modules/@coral-xyz/anchor/src/error.ts:277:35)
+      at MethodsBuilder.rpc [as _rpcFn] (node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:35:29)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  9) Phase 2: SSS-1 Core
+       User can burn their own tokens with Burner's authorization:
+     Error: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x2. 
+Logs: 
+[
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [1]",
+  "Program log: Create",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+  "Program log: Instruction: GetAccountDataSize",
+  "Program log: Error: Invalid Mint",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 632 of 194643 compute units",
+  "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb failed: custom program error: 0x2",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 5989 of 200000 compute units",
+  "Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL failed: custom program error: 0x2"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+      at Connection.sendEncodedTransaction (node_modules/@solana/web3.js/src/connection.ts:6053:13)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at Connection.sendRawTransaction (node_modules/@solana/web3.js/src/connection.ts:6009:20)
+      at Connection.sendTransaction (node_modules/@solana/web3.js/src/connection.ts:5997:12)
+      at sendAndConfirmTransaction (node_modules/@solana/web3.js/src/utils/send-and-confirm-transaction.ts:36:21)
+
+  10) Phase 2: SSS-1 Core
+       Master can update roles:
+     Error: AnchorError caused by account: state. Error Code: AccountNotInitialized. Error Number: 3012. Error Message: The program expected this account to be already initialized.
+      at AnchorError.parse (node_modules/@coral-xyz/anchor/src/error.ts:168:14)
+      at translateError (node_modules/@coral-xyz/anchor/src/error.ts:277:35)
+      at MethodsBuilder.rpc [as _rpcFn] (node_modules/@coral-xyz/anchor/src/program/namespace/rpc.ts:35:29)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+
+
+error Command failed with exit code 10.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
