@@ -14,13 +14,16 @@
 
 ### Dashboard
 
-![Live token status, oracle feeds, and minter management](./screenshots/Dashboard1.png)
-
-![Oracle price feeds and compliance command generators](./screenshots/Dashboard2.png)
-
-![Compliance admin panel — blacklist, seize, quota management](./screenshots/Dashboard3.png)
-
-![Proof of work — live Devnet transaction links](./screenshots/Dashboard4.png)
+<table>
+  <tr>
+    <td><img src="./screenshots/Dashboard1.png" alt="Live token status and minters" width="400"/></td>
+    <td><img src="./screenshots/Dashboard2.png" alt="Oracle price feeds" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="./screenshots/Dashboard3.png" alt="Compliance admin panel" width="400"/></td>
+    <td><img src="./screenshots/Dashboard4.png" alt="Proof of work — Devnet txns" width="400"/></td>
+  </tr>
+</table>
 
 
 > **The open-source SDK and core standards for stablecoins on Solana** — a production-ready, modular toolkit for institutions and builders to deploy USDC/USDT-class compliant stablecoins using Token-2022.
