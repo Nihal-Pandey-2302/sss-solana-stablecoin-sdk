@@ -8,10 +8,19 @@
 
 ## 🌐 Live Demo &nbsp;|&nbsp; 🎥 Demo Video
 
-> **[→ Launch Web Dashboard](https://sss-solana-stablecoin-elhakuovd-nihals-projects-7da31bb2.vercel.app/)** — connect Phantom (Devnet) to interact live
+> **[→ Launch Web Dashboard](https://sss-solana-stablecoin-sdk.vercel.app/)** — connect Phantom (Devnet) to interact live
 
-> **[▶️ Watch the 5-minute walkthrough](https://youtu.be/YOUR_VIDEO_ID_HERE)** — SSS-2 blacklist + seizure on Devnet
+> **[▶️ Watch the 5-minute demo video](https://youtu.be/ZdRW4Zp-b0Q)** — SSS-2 blacklist + seizure live on Devnet
 
+### Dashboard
+
+![Live token status, oracle feeds, and minter management](./screenshots/Dashboard1.png)
+
+![Oracle price feeds and compliance command generators](./screenshots/Dashboard2.png)
+
+![Compliance admin panel — blacklist, seize, quota management](./screenshots/Dashboard3.png)
+
+![Proof of work — live Devnet transaction links](./screenshots/Dashboard4.png)
 
 
 > **The open-source SDK and core standards for stablecoins on Solana** — a production-ready, modular toolkit for institutions and builders to deploy USDC/USDT-class compliant stablecoins using Token-2022.
@@ -163,13 +172,19 @@ solana balance   # fund from faucet.solana.com if <0.1 SOL
 
 ### Option A — Web Dashboard (Easiest)
 
-> **[→ Launch Dashboard](https://sss-solana-stablecoin-elhakuovd-nihals-projects-7da31bb2.vercel.app/)** — no CLI needed.
+> **[→ Launch Dashboard](https://sss-solana-stablecoin-sdk.vercel.app/)** — no CLI needed.
 
 1. Open the link and click **Select Wallet** → Phantom → Approve
 2. Set Phantom to **Devnet** (Settings → Developer Settings → Change Network)
 3. The dashboard will automatically load live token state, minters list, and oracle prices
 4. Click **Create Token Account** to create your ATA for the demo mint
 5. Run CLI commands for blacklist/seize using the pre-filled command generators
+
+### Terminal Demo
+
+![CLI status, supply, and minters list on Devnet](./screenshots/terminal1.png)
+
+![Mint → Blacklist → Seize → Remove lifecycle on Devnet](./screenshots/terminal2.png)
 
 ### Option B — Interactive TUI Dashboard
 
