@@ -266,8 +266,11 @@ export default function DashboardPage() {
       <div className="card">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
           {Object.entries(SIMULATED_PRICES).map(([key, feed]) => (
-            <div key={key} style={{ background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 10, padding: "14px" }}>
-              <div style={{ fontSize: 11, color: "var(--text3)", marginBottom: 6, fontWeight: 600, letterSpacing: "0.05em" }}>{feed.pair}</div>
+            <div style={{ background: "var(--bg2)", border: "1px solid var(--border)", borderRadius: 10, padding: "14px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                <div style={{ fontSize: 11, color: "var(--text3)", fontWeight: 600, letterSpacing: "0.05em" }}>{feed.pair}</div>
+                <span style={{ fontSize: 9, color: "var(--text3)", background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 4, padding: "1px 5px" }}>Demo · Simulated</span>
+              </div>
               <div style={{ fontSize: 20, fontWeight: 700, color: "var(--text)", marginBottom: 4 }}>${feed.price.toFixed(feed.price < 10 ? 4 : 2)}</div>
               <div style={{ fontSize: 11, color: feed.change >= 0 ? "var(--green)" : "var(--red)", fontWeight: 500 }}>
                 {feed.change >= 0 ? "+" : ""}{feed.change.toFixed(3)} today
